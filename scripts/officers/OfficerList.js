@@ -14,7 +14,7 @@ export const OfficerList = () => {
             officerHTMLRepresentation += Officer(officer)
 
             officerContainer.innerHTML = `
-                <article class="glassdaleOfficers>
+                <article class="glassdaleOfficers">
                     ${officerHTMLRepresentation}
                 </article>`
 
