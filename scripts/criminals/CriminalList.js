@@ -7,21 +7,21 @@ const criminalContainer = document.querySelector(".criminalsContainer")
 
 export const CriminalList = () => {
 
-
-    getCriminals()
+       getCriminals()
         .then(() => {
 
             const criminalArray = useCriminals()
-            console.log("USECRIM", useCriminals())
+            
             
             let criminalHTMLRepresentation = ""
             
             for (const criminal of criminalArray) {
-
+                
                 criminalHTMLRepresentation += Criminal(criminal)
-                // console.log("CRIMHTML", criminalHTMLRepresentation)
-                criminalContainer.innerHTML += `
-                    <article class="Glassdale Criminals">
+          
+                
+                criminalContainer.innerHTML = `
+                    <article class="glassdaleCriminals">
                         ${criminalHTMLRepresentation}
                     </article>`
             

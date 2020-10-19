@@ -1,5 +1,5 @@
 let criminals = []
-// console.log("ONE")
+
 export const useCriminals = () => {
     return criminals.slice()
 }
@@ -10,12 +10,10 @@ export const getCriminals = () => {
         .then(
             parsedCriminals => {
         
-                criminals.push(parsedCriminals)
+                criminals = parsedCriminals
                 
             }
         )      
 }
-// console.log("THREE")
-// console.log("USECRIME" ,useCriminals())
-//  console.log("ARRAY" , criminals)
+
 

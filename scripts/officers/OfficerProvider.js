@@ -11,8 +11,7 @@ export const getOfficers = () => {
         parsedOfficers => {
              console.table("PARSED" , parsedOfficers)
             officers = parsedOfficers
+            console.log(officers)
         }
     )
 }
-
-
