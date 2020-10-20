@@ -15,4 +15,4 @@ export const getConvictions = () => {
             }
             )
         }
-        console.log("conARRAY" , convictions)
+        
