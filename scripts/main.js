@@ -4,6 +4,7 @@ import { OfficerList } from "./officers/OfficerList.js"
 import { getOfficers, useOfficers } from "./officers/OfficerProvider.js"
 import { getConvictions, useConvictions } from "./convictions/ConvictionProvider.js"
 import { ConvictionSelect } from "./convictions/ConvictionSelect.js"
+import { OfficerSelect } from "./officers/OfficerSelect.js"
 
 
 
@@ -11,3 +12,4 @@ CriminalList()
 OfficerList()
 ConvictionSelect()
 getConvictions()
+OfficerSelect()

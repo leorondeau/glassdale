@@ -3,6 +3,9 @@
 
 import { getOfficers, useOfficers } from "./OfficerProvider.js"
 import { Officer } from "./Officer.js"
+import { useCriminals } from "../criminals/CriminalProvider.js"
+
+const eventHub = document.querySelector(".container")
 
 // Export the function to main.js because that is the only page linked to the index.html.
 export const OfficerList = () => {

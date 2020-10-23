@@ -4,7 +4,7 @@ const contentTarget = document.querySelector(".filters__crime")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("change", event => {
-console.log(event)
+// vaconsole.log("CONSELECT" , event)
     // Action if 'crimeselect' element was changed
     if (event.target.id === "crimeSelect") {
         // Create custom event. Provide an appropriate name.
@@ -36,8 +36,9 @@ const render = convictionsCollection => {
             <option value="0">Please select a crime...</option>
             ${convictionsCollection.map(
                 convictionObj => {
-
+                    
             return `<option value="${convictionObj.id}">${convictionObj.name}</option>`
+
         }
 
     )
