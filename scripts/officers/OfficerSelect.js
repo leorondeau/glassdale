@@ -12,7 +12,7 @@ const render = officerCollection => {
             ${officerCollection.map(
         officerObj => {
 
-            return `<option value="${officerObj.name}">${officerObj.name}</option>`
+            return `<option value="${officerObj.id}">${officerObj.name}</option>`
         }
 
     )
@@ -32,19 +32,24 @@ export const OfficerSelect = () => {
 
 }
 
-eventHub.addEventListener("change", (changeEvent) => {
-    if (changeEvent.target.id === "officerSelect") {
-      console.log("OfficerSelect: Change event happened in the officers dropdown")
-      
-      console.log("OfficerSelect: Build custom event for officerSelected")
-      const officerSelectedEvent = new CustomEvent("officerSelected", {
-        detail: {
-          officerName: changeEvent.target.value
-        }
+
+eventHub.addEventListener("change", event => {
+  if(event.target.id === "officerSelect") {
+    console.log("OfficerSelect: Change event happened in the officers dropdown")
+    console.log("OfficerSelect: Build custom event for officerSelected")  
+    const customEvent = new CustomEvent ("officerChosen" , {
+
+          detail: { 
+              officerThatWasChosen: parseInt(event.target.value)
+          
+          }
+          
       })
-  
       console.log("OfficerSelect: Dispatch officerSelected event to event hub")
-      eventHub.dispatchEvent(officerSelectedEvent)
-    }
-  })
+      eventHub.dispatchEvent(customEvent)
+      
+  }
+})
+
+
   
