@@ -1,4 +1,5 @@
 import { useConvictions } from "../convictions/ConvictionProvider.js"
+import { useOfficers } from "../officers/OfficerProvider.js"
 import { Criminal } from "./Criminal.js"
 import { useCriminals, getCriminals } from "./CriminalProvider.js"
 
@@ -77,19 +78,28 @@ const render = (criminalsArray) => {
 
 }
 
-eventHub.addEventListener("officerSelected" , officerSelectedEventObj => {
-    const selectedOfficerName = officerSelectedEventObj.detail.officerName
-    console.log("CriminalList: officerSelected custom event has been heard on the event hub, selected officer name: ", selectedOfficerName)
 
-    const criminalsArray = useCriminals()
-    console.log("Criminal Array" , criminalsArray)
-    const filteredArrayCriminals = criminalsArray.filter(
-        (criminalObj) => {
-          return criminalObj.arrestingOfficer === selectedOfficerName
-  
-        }
-      )
-    console.log("CriminalList: Array of criminals filtered for only the criminals that were arrested by selected officer", filteredArrayCriminals)
-    render(filteredArrayCriminals)
-    console.log("CriminalList: Filtered list of criminals rendered to DOM")
-        })
+eventHub.addEventListener("officerChosen" , event => {
+    if (event.detail.officerThatWasChosen !== "0") {
+        // console.log("CriminalList: officerSelected custom event has been heard on the event hub, selected officer name: ", selectedOfficerName)
+
+        const officersArray = useOfficers()
+    
+        const criminalsArray = useCriminals()
+        console.log("CRIMARRAY" , criminalsArray)
+       const selectedOfficer = officersArray.find(officerObj => {
+           return officerObj.id === event.detail.officerThatWasChosen
+       })
+
+       const filteredArrestArray = criminalsArray.filter(crimeObj => {
+        // console.log("CRIMOFFARR" , crimeObj)
+        // console.log("SelectedOfficer" ,selectedOfficer.id)
+        return crimeObj.arrestingOfficer === selectedOfficer.name
+           
+       })
+      //     console.log("CriminalList: Array of criminals filtered for only the criminals that were arrested by selected officer", filteredArrayCriminals)
+       render(filteredArrestArray)
+       //     console.log("CriminalList: Filtered list of criminals rendered to DOM")
+    }
+})
+
