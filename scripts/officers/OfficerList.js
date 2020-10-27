@@ -19,7 +19,8 @@ export const OfficerList = () => {
             // This is where the HTML is mapped over and converted into a string so the browser can read it. Previously we had empty HTML "" vars to push each obj into but with the
             // the map method that is streamlined.
             officerContainer.innerHTML = `
-                <article class="glassdaleOfficers">
+            <h4>Glassdale Officers</h4> 
+            <article class="glassdaleOfficers">
                     ${officerArray.map(officer => Officer(officer)).join("")}
                 </article>`
 

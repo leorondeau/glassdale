@@ -1,10 +1,11 @@
 export const Note = (noteObj) => {
     return `
         <div class="noteCard">
-            <h4>${noteObj.author}</h4>
-            <p>Crime:${noteObj.suspect}</p>
-            <p>Date of Interview:${new Date(noteObj.dateOfInterview.start).toLocaleDateString('en-US')}</p>
-            <p>Time Stamp: ${date.now()}</p>
-               
+           
+            <h5>Author: ${noteObj.author}</h5>
+                <p>Suspect: ${noteObj.suspect}</p>
+                <p>Date of Interview: ${noteObj.dateOfInterview}</p>
+                <p>Time Note Entered: ${new Date(noteObj.timestamp).toLocaleDateString('en-US')}</p>
+                <p>Note: ${noteObj.note}</p>
         </div>`
 }

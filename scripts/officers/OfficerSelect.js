@@ -41,7 +41,7 @@ eventHub.addEventListener("change", event => {
 
           detail: { 
               officerThatWasChosen: parseInt(event.target.value)
-          
+            
           }
           
       })

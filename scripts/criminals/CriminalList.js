@@ -51,6 +51,7 @@ eventHub.addEventListener("crimeSelected", event => {
        
         const filteredCriminalsArray = criminalArray.filter(criminalObj => {
             // console.log("CONCHOSEN" , convictionThatWasChosen)
+
             return criminalObj.conviction === convictionThatWasChosen.name
             
         })
@@ -86,7 +87,7 @@ eventHub.addEventListener("officerChosen" , event => {
         const officersArray = useOfficers()
     
         const criminalsArray = useCriminals()
-        console.log("CRIMARRAY" , criminalsArray)
+       
        const selectedOfficer = officersArray.find(officerObj => {
            return officerObj.id === event.detail.officerThatWasChosen
        })
@@ -102,4 +103,5 @@ eventHub.addEventListener("officerChosen" , event => {
        //     console.log("CriminalList: Filtered list of criminals rendered to DOM")
     }
 })
+
 

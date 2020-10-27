@@ -1,20 +1,50 @@
 {
-    "notes": [
-        {
-            "author": "Marques Balistreri",
-            "Date of Note": "10/10/2020",
-            "Suspect": "Nathanael Champlin",
-            "timestamp": "date.now()",
-            "Entry": "This person is doing bad stuff",
-            "ID": 1
-        },
-        {
-            "author": "Marques Balistreri",
-            "Date of Note": "10/10/2020",
-            "Suspect": "Nathanael Champlin",
-            "timestamp": "date.now()",
-            "noteText": "This person is doing bad stuff",
-            "ID": 2
-        }
-    ]
+  "notes": [
+    {
+      "author": "Marques Balistreri",
+      "Date of Note": "10/10/2020",
+      "Suspect": "Nathanael Champlin",
+      "timestamp": "Date.now()",
+      "Entry": "This person is doing bad stuff",
+      "id": 1
+    },
+    {
+      "author": "Marques Balistreri",
+      "Date of Note": "10/10/2020",
+      "Suspect": "Nathanael Champlin",
+      "timestamp": "Date.now()",
+      "noteText": "This person is doing bad stuff",
+      "id": 2
+    },
+    {
+      "dateOfInterview": "",
+      "author": "",
+      "suspect": "",
+      "note": "",
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "dateOfInterview": "",
+      "author": "",
+      "suspect": "",
+      "note": "",
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "dateOfInterview": "",
+      "author": "asdf",
+      "suspect": "Joe",
+      "note": "Bad",
+      "id": 7
+    },
+    {
+      "id": 8
+    }
+  ]
 }
