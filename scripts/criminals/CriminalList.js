@@ -7,7 +7,7 @@ import { useCriminals, getCriminals } from "./CriminalProvider.js"
 
 
 const eventHub = document.querySelector(".container")
-const criminalContainer = document.querySelector(".criminalsContainer")
+const criminalContainer = document.querySelector(".caseDataContainer")
 
 
 
