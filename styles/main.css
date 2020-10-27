@@ -19,7 +19,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
-.glassdaleCriminals {
+.criminalsList {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
@@ -31,6 +31,7 @@ h1,h2,h3,h4,h5,h6 {
 	margin: 1rem;
 	padding: .5rem;
 	flex-basis: 25%;
+	border-radius: 8px;
 }
 
 .glassdaleOfficers {
@@ -45,5 +46,23 @@ h1,h2,h3,h4,h5,h6 {
 	margin: 1rem;
 	padding: .5rem;
 	flex-basis: 25%;
+	border-radius: 8px;
+}
+
+.notesContainer {
+	display: flex;
+	
+}
+
+.leftContainer {
+	flex: 4
+}
+
+.noteAside {
+	flex: 1;
+	border: 1px solid rgb(199, 192, 192);
+	padding: .5rem;
+	background-color: rgb(199, 192, 192);
+	border-radius: 8px;
 }
 
