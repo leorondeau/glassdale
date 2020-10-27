@@ -23,7 +23,21 @@ export const NotesList = () => {
     })
 }
 
+// // const render = (notes) => {
 
+// // let noteHTMLRepresentations = ""
+// // for (const note of notes) {
+
+// //   noteHTMLRepresentations += Note(note)
+
+// //   contentTarget.innerHTML = `
+        
+// //           ${noteHTMLRepresentations}
+       
+// //       `
+// // }
+
+// }
 const render = (notes) => {
 
 
