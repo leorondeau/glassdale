@@ -35,8 +35,8 @@ export const OfficerSelect = () => {
 
 eventHub.addEventListener("change", event => {
   if(event.target.id === "officerSelect") {
-    console.log("OfficerSelect: Change event happened in the officers dropdown")
-    console.log("OfficerSelect: Build custom event for officerSelected")  
+    // console.log("OfficerSelect: Change event happened in the officers dropdown")
+    // console.log("OfficerSelect: Build custom event for officerSelected")  
     const customEvent = new CustomEvent ("officerChosen" , {
 
           detail: { 
@@ -45,7 +45,7 @@ eventHub.addEventListener("change", event => {
           }
           
       })
-      console.log("OfficerSelect: Dispatch officerSelected event to event hub")
+    //   console.log("OfficerSelect: Dispatch officerSelected event to event hub")
       eventHub.dispatchEvent(customEvent)
       
   }

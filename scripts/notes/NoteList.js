@@ -1,6 +1,6 @@
 import { getNotes , useNotes } from "./NoteProvider.js"
 import { Note } from "./Note.js"
-import { getCriminals } from "../criminals/CriminalProvider.js"
+import { getCriminals , useCriminals } from "../criminals/CriminalProvider.js"
 
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".noteAside")
@@ -13,25 +13,28 @@ const notesArray = useNotes()
 export const NotesList = () => {
 
     
-    console.log(notesArray)
+    
     getNotes()
     .then(() => {
         const notesArray = useNotes()
         render(notesArray)
-
+        // console.log(notesArray)
 
     })
 }
 
-const render = (notes) => {
+const render = (notesArray , criminalArray) => {
 
 
-    contentTarget.innerHTML = `
+    contentTarget.innerHTML = notesArray.map(note => {
+        const relatedCriminal = criminalArray.find(criminal => criminal.id === note.criminalId)
+        return `
+            <section class="note">
+                <h2>Note about ${relatedCriminal.name}</h2>
+                ${note.noteText}
+             </section>   
+             `
+    })
    
-    ${notes.map(
-        notesObj => {
-      return Note(notesObj)
+    
     }
-    )
-}` 
-}
