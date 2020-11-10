@@ -1,10 +1,28 @@
 {
   "notes": [
     {
-      "id": 1,
-      "noteText": "bad stuff",
-      "criminalId": 4
+      "dateOfInterview": "2020-11-11",
+      "author": "Ice-T",
+      "criminalId": 38,
+      "note": "More like hella guilty",
+      "timeStamp": 1604973024826,
+      "id": 1
+    },
+    {
+      "dateOfInterview": "2020-11-11",
+      "author": "Ice-T",
+      "criminalId": 38,
+      "note": "More like hella guilty",
+      "timeStamp": 1604973026425,
+      "id": 2
+    },
+    {
+      "dateOfInterview": "",
+      "author": "",
+      "criminalId": 1,
+      "note": "",
+      "timeStamp": 1604980601955,
+      "id": 3
     }
-    
   ]
 }

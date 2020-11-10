@@ -1,11 +1,14 @@
-export const Note = (noteObj) => {
+export const Note = (noteObj , criminalObj) => {
+    // console.log('here')
+    // console.log("note , criminal" , noteObj , criminalObj)
     return `
         <div class="noteCard">
            
             <h5>Author: ${noteObj.author}</h5>
-                <p>Suspect: ${noteObj.suspect}</p>
+                <p>Criminal: ${criminalObj.name}</p>
                 <p>Date of Interview: ${noteObj.dateOfInterview}</p>
-                <p>Time Note Entered: ${new Date(noteObj.timestamp).toLocaleDateString('en-US')}</p>
+                <p>Time Note Entered: ${new Date(noteObj.timeStamp).toLocaleDateString('en-US')}</p>
                 <p>Note: ${noteObj.note}</p>
+                <button id="deleteNote--${noteObj.id}">Delete</button>
         </div>`
 }

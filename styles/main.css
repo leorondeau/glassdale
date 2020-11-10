@@ -11,6 +11,12 @@ textarea {
 	font-family: "Comfortaa", Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
+	background-color: var(--primary--color);
+}
+
+:root {
+	--primary--color: #e9ecef;
+
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -31,7 +37,16 @@ h1,h2,h3,h4,h5,h6 {
 	margin: 1rem;
 	padding: .5rem;
 	flex-basis: 25%;
-	border-radius: 8px;
+	border-radius: 5px;
+}
+
+.noteCard {
+ 
+	border: 1px solid black;
+	margin: 1rem;
+	padding: .5rem;
+	flex-basis: 25%;
+	border-radius: 5px;
 }
 
 .glassdaleOfficers {
@@ -46,7 +61,7 @@ h1,h2,h3,h4,h5,h6 {
 	margin: 1rem;
 	padding: .5rem;
 	flex-basis: 25%;
-	border-radius: 8px;
+	border-radius: 5px;
 }
 
 .notesContainer {
@@ -60,9 +75,35 @@ h1,h2,h3,h4,h5,h6 {
 
 .noteAside {
 	flex: 1;
-	border: 1px solid rgb(199, 192, 192);
-	padding: .5rem;
-	background-color: rgb(199, 192, 192);
-	border-radius: 8px;
+	
+	padding: 0rem .5rem .5rem .5rem;
+	
+	border-radius: 5px;
+	
 }
 
+.title {
+	border: 2px solid black;
+	padding: .5rem;
+	border-radius: 5px;
+	background-color: #ced4da;
+}
+
+
+button {
+	border-radius: 10px;
+	
+}
+button:focus {
+	outline: 3px solid orange;
+  }
+
+.noteFormContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+}

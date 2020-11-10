@@ -24,13 +24,13 @@ const render = (criminalArray) => {
     contentTarget.innerHTML = `
     
         <input type="text" id="note--author"  placeholder="Officer Name">
-        <input type="date" id="note--dateOfInterview">
         <select id="noteForm--criminal" class="criminalSelect">
         ${criminalArray.map(criminalObj => {
-       return ` <option value="${ criminalObj.id }">${ criminalObj.name }</option>`
+            return ` <option value="${ criminalObj.id }">${ criminalObj.name }</option>`
         }
         )
     }
+        <input type="date" id="note--dateOfInterview">
         </select>
         <textarea id="note--entry"></textarea>
         <button id="saveNote">Save Note</button>
@@ -48,16 +48,17 @@ eventHub.addEventListener("click", clickEvent => {
         const dateOfInterview = document.querySelector("#note--dateOfInterview").value
         // console.log(document.querySelector("#note--dateOfInterview").value)
         const author = document.querySelector("#note--author").value
-        const suspect = document.querySelector("#noteForm--criminal").value
-        console.log("SUSPECT" , suspect)
+        const criminalId = parseInt(document.querySelector("#noteForm--criminal").value)
+      
         const note = document.querySelector("#note--entry").value
         const timeStamp = Date.now()
 
         const newNote = {
             dateOfInterview,
             author,
-            suspect,
+            criminalId,
             note,
+            timeStamp
         
             
         }
