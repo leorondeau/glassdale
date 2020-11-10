@@ -4,7 +4,7 @@ const dispatchStateChangeEvent = () => {
     const noteStateChangedEvent = new CustomEvent("noteStateChanged")
 
     eventHub.dispatchEvent(noteStateChangedEvent)
-    console.log("NOTESTATE" , noteStateChangedEvent)
+    // console.log("NOTESTATE" , noteStateChangedEvent)
 }
 
 let notes = ""
@@ -37,6 +37,14 @@ export const saveNote = note => {
     .then(dispatchStateChangeEvent)
     
 }
+
+export const deleteNote = noteId => { 
+    return fetch(`http://localhost:8088/notes/${noteId}`,{
+        method: "DELETE"
+    })
+    .then(getNotes)
+}
+
 
 const NoteForm = () => {
 

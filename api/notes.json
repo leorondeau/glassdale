@@ -1,50 +1,28 @@
 {
   "notes": [
     {
-      "author": "Marques Balistreri",
-      "Date of Note": "10/10/2020",
-      "Suspect": "Nathanael Champlin",
-      "timestamp": "Date.now()",
-      "Entry": "This person is doing bad stuff",
+      "dateOfInterview": "2020-11-11",
+      "author": "Ice-T",
+      "criminalId": 38,
+      "note": "More like hella guilty",
+      "timeStamp": 1604973024826,
       "id": 1
     },
     {
-      "author": "Marques Balistreri",
-      "Date of Note": "10/10/2020",
-      "Suspect": "Nathanael Champlin",
-      "timestamp": "Date.now()",
-      "noteText": "This person is doing bad stuff",
+      "dateOfInterview": "2020-11-11",
+      "author": "Ice-T",
+      "criminalId": 38,
+      "note": "More like hella guilty",
+      "timeStamp": 1604973026425,
       "id": 2
     },
     {
       "dateOfInterview": "",
       "author": "",
-      "suspect": "",
+      "criminalId": 1,
       "note": "",
+      "timeStamp": 1604980601955,
       "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "dateOfInterview": "",
-      "author": "",
-      "suspect": "",
-      "note": "",
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "dateOfInterview": "",
-      "author": "asdf",
-      "suspect": "Joe",
-      "note": "Bad",
-      "id": 7
-    },
-    {
-      "id": 8
     }
   ]
 }

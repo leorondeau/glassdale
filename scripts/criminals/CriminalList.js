@@ -70,7 +70,7 @@ const render = (criminalsArray) => {
       criminalsHTMLRepresentations += Criminal(criminal)
   
       criminalContainer.innerHTML = `
-            <h3>Glassdale Criminals</h3>
+            <h3 class=title>Glassdale Criminals</h3>
             <section class="criminalsList">
               ${criminalsHTMLRepresentations}
             </section>
