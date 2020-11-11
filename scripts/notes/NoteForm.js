@@ -23,8 +23,9 @@ export const NoteForm = () => {
 const render = (criminalArray) => {
     contentTarget.innerHTML = `
     
-        <input type="text" id="note--author"  placeholder="Officer Name">
+        <input type="text"  id="note--author" placeholder="Officer Name">
         <select id="noteForm--criminal" class="criminalSelect">
+        <option value="0">Please select a criminal</option>
         ${criminalArray.map(criminalObj => {
             return ` <option value="${ criminalObj.id }">${ criminalObj.name }</option>`
         }
