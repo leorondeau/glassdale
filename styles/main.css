@@ -101,9 +101,17 @@ button:focus {
 .noteFormContainer {
 	display: flex;
 	flex-direction: column;
+	margin: .25rem;
+	
 }
 
 header {
 	display: flex;
 	justify-content: space-between;
+
+}
+
+input {
+	margin: .5rem;
+	
 }
