@@ -14,7 +14,7 @@ export const useNotes = () => {
 }
 
 export const getNotes = () => {
-    return fetch('http://localhost:8088/notes')
+    return fetch('http://localhost:8087/notes')
         .then(response => response.json())
         .then(parsedNotes => {
             notes = parsedNotes
@@ -26,7 +26,7 @@ export const getNotes = () => {
 
 // Where is any of this coming from?
 export const saveNote = note => {
-    return fetch('http://localhost:8088/notes', {
+    return fetch('http://localhost:8087/notes', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -39,7 +39,7 @@ export const saveNote = note => {
 }
 
 export const deleteNote = noteId => { 
-    return fetch(`http://localhost:8088/notes/${noteId}`,{
+    return fetch(`http://localhost:8087/notes/${noteId}`,{
         method: "DELETE"
     })
     .then(getNotes)
