@@ -19,7 +19,8 @@ let criminals = []
 
 export const CriminalList = () => {
     // Kick off the fetching of both collections of data
-    getFacilities()
+    getCriminals()
+    .then(getFacilities)
         .then(getCriminalFacilities)
         .then(
             () => {
@@ -29,12 +30,12 @@ export const CriminalList = () => {
                 criminals = useCriminals()
 
                 // Pass all three collections of data to render()
-                render(criminals, facilities, crimFac)
+                render()
             }
         )
 }
 
-const render = (criminals, facilities, crimFac) => {
+const render = () => {
     let criminalsHTMLRepresentations = ""
     // step 1 Iterate all criminals
     // step 2 Filter all relationships to get only the ones for this criminal
@@ -42,11 +43,12 @@ const render = (criminals, facilities, crimFac) => {
     
       criminalsHTMLRepresentations = criminals.map(criminal => {
           const facilityObj = eachCriminalFacility(criminal)
+        //   debugger
         //   console.log(facilityObj)
           const facility = convertFacilityIdToFacility(facilityObj)
         //   console.log("facility" , facility)
           return Criminal(criminal , facility)
-      })
+      }).join("")
 
   
       criminalContainer.innerHTML += `
@@ -58,9 +60,11 @@ const render = (criminals, facilities, crimFac) => {
     }
 
 
-  
+  //Filter through Criminal Facilities to match criminalIds to criminal Id
+//   Why do relatedFacilities and facilityObj console log the same?
 const eachCriminalFacility = (criminal) => {
     const relatedFacilities = crimFac.filter(cf => cf.criminalId === criminal.id)
+    // console.log("related Facilities" , relatedFacilities)
     return relatedFacilities
 }
 
@@ -71,19 +75,6 @@ const convertFacilityIdToFacility = (relationships) => {
     return facilityObj
 }
 
-// export const CriminalList = () => {
-
-//     getCriminals()
-//         .then(() => {
-
-//             const criminalArray = useCriminals()
-
-//             render(criminalArray)
-//         })
-    
-//     }
-
-
 
 eventHub.addEventListener("crimeSelected", event => {
     // console.log("CRIMEVENT" , event)
@@ -92,7 +83,7 @@ eventHub.addEventListener("crimeSelected", event => {
     // Use the property you added to the event detail.
     if (event.detail.crimeThatWasChosen !== 0) {
 
-        const criminalArray = useCriminals()
+        // const criminalArray = useCriminals()
         // console.log("CRIMARRAY" , criminalArray)
 
         const convictionsArray = useConvictions()
@@ -108,21 +99,22 @@ eventHub.addEventListener("crimeSelected", event => {
         })
         
        
-        const filteredCriminalsArray = criminalArray.filter(criminalObj => {
+        console.log("criminals=conArray", criminals)
+        const filteredCriminalsArray = criminals.filter(criminalObj => {
             // console.log("CONCHOSEN" , convictionThatWasChosen)
-
+            // debugger
             return criminalObj.conviction === convictionThatWasChosen.name
             
         })
+
+        criminals = filteredCriminalsArray
+        console.log("criminals" , criminals)
         // console.log("FILTCRIME" , filteredCriminalsArray)
-        render(filteredCriminalsArray)
+        render()
         // console.log(filteredCriminalsArray)
     }
 
 })
-
-
-
 
 
 
@@ -145,8 +137,11 @@ eventHub.addEventListener("officerChosen" , event => {
            
        })
       //     console.log("CriminalList: Array of criminals filtered for only the criminals that were arrested by selected officer", filteredArrayCriminals)
-       render(filteredArrestArray)
+    // Can globally scoped let defined variables be fluid in each function?
+        criminals = filteredArrestArray 
+      render()
        //     console.log("CriminalList: Filtered list of criminals rendered to DOM")
     }
 })
 
+//Why does my witnesslist load first?
