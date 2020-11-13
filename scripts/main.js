@@ -10,6 +10,8 @@ import { NotesList } from "./notes/NoteList.js"
 import  "./criminals/AlibiList.js"
 import { WitnessList } from "./witnesses/WitnessStatementList.js"
 import { getNotes } from "./notes/NoteProvider.js"
+import "./facility/FacilityList.js"
+import { FacilityList } from "./facility/FacilityList.js"
 
 
 CriminalList()
@@ -19,11 +21,12 @@ getConvictions()
 OfficerSelect()
 NoteForm()
 
+
 getNotes()
 .then(getCriminals)
     .then(NotesList)
 
-WitnessList()
+// WitnessList()
 
 
 
