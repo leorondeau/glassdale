@@ -7,6 +7,6 @@ export const getFacilities = () => {
     .then(response => response.json())
     .then(apiData => {
         facilities = apiData
-        console.log("facilities" , facilities)
+        // console.log("facilities" , facilities)
     })
 }

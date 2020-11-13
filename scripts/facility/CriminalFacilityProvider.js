@@ -11,3 +11,5 @@ export const getCriminalFacilities = () => {
             criminalFacilities = apiData
         })
 }
+
+
